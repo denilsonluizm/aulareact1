@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import imgEdit from "./images/imgEdit.ico";
+import imgDelete from "./images/imgDelete.ico";
 import "./Usuarios.css";
 
 export default function Usuarios() {
@@ -139,7 +140,7 @@ export default function Usuarios() {
                   />
                   <img
                     alt="Apagar"
-                    src={imgEdit}
+                    src={imgDelete}
                     id={item.id}
                     height={20}
                     width={20}
