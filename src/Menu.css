@@ -1,0 +1,17 @@
+nav ul {
+    /* text-decoration: none; */
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+header {
+    padding: 10px;
+    background-color: cadetblue;
+    height: 50px;
+}
+
+.itemMenu:hover {
+    color: aliceblue;
+    transition: 1s;
+}
