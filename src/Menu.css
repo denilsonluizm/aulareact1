@@ -7,11 +7,45 @@ nav ul {
 
 header {
     padding: 10px;
-    background-color: cadetblue;
     height: 50px;
+    text-align: center;
 }
 
-.itemMenu:hover {
-    color: aliceblue;
-    transition: 1s;
+
+
+#menu-h {
+    background-color: rgb(0, 51, 126);
+}
+
+#menu-h ul {
+    max-width: 800px;
+    list-style: none;
+    padding: 0;
+}
+
+#menu-h ul li {
+    display: inline;
+}
+
+#menu-h ul li a {
+    color: rgb(246, 250, 9);
+    padding: 20px;
+    display: inline-block;
+    text-decoration: none;
+    transition: background .4s;
+}
+
+#menu-h ul li a:hover {
+    background-color: rgb(246, 250, 9);
+    color: rgb(0, 51, 126);
+}
+
+#menu-h ul li:last-child a {
+    float: right;
+    background-color: rgb(147, 147, 147);
+}
+
+#menu-h ul li:last-child a:hover {
+    background-color: rgb(246, 250, 9);
+    color: rgb(0, 51, 126);
 }
