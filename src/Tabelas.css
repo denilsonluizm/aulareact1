@@ -1,0 +1,39 @@
+/* Trabalho 1 - Desenvolvimento de Sistemas Web - T01 - 2022.1
+    
+Alunos:
+Denilson Luiz Amaro Martins - 2020031625
+Pedro Henrique Azevedo do Prado - 2022001536
+
+Professor:
+Eduardo Ribeiro Felipe */
+
+#tabela {
+    margin: 0 auto;
+    width: 900px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-radius: 5%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Cabeçalho da Linha */
+#tabela thead tr {
+    background-color: rgb(0, 51, 126);
+    color: rgb(246, 250, 9);
+    text-align: center;
+}
+
+/* Body da Linha */
+#tabela tbody tr {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+#tabela thead tr th {
+    padding: 15px;
+}
+
+/* linha */
+#tabela tr {
+    border: 3px solid rgb(0, 0, 0);
+}

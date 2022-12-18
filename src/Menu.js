@@ -16,6 +16,7 @@ export default function Menu() {
                     </li>
                     <li><Link className="itemMenu" to="/membros"> Membros </Link> </li>
                     <li><Link className="itemMenu" to="/calculadora"> Calculadora </Link> </li>
+                    <li><Link className="itemMenu" to="/sobre">Sobre o Projeto</Link></li>
                 </ul>
             </nav>
         </header>

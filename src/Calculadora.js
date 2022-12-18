@@ -1,6 +1,17 @@
+// Trabalho 1 - Desenvolvimento de Sistemas Web - T01 - 2022.1
+    
+// Alunos:
+// Denilson Luiz Amaro Martins - 2020031625
+// Pedro Henrique Azevedo do Prado - 2022001536
+
+// Professor:
+// Eduardo Ribeiro Felipe
+
 import fatorArrastoInduzido from './images/fatorArrastoInduzido.png'
-// import './App.css';
-import { calcReynolds, calculo1, calculo2 } from './codigo';
+import './Tabelas.css';
+import { calcReynolds, calculo1, calculo2 } from './Equacoes';
+
+// Calculadora Aerodinâmica
 
 function Calculadora() {
     return (

@@ -1,3 +1,12 @@
+// Trabalho 1 - Desenvolvimento de Sistemas Web - T01 - 2022.1
+    
+// Alunos:
+// Denilson Luiz Amaro Martins - 2020031625
+// Pedro Henrique Azevedo do Prado - 2022001536
+
+// Professor:
+// Eduardo Ribeiro Felipe
+
 import membros from './images/membros.png';
 import logoCompleto from './images/logoCompleto.png';
 import './App.css';
@@ -8,9 +17,13 @@ function App() {
       <br></br>
       <br></br>
 
+      {/* Colocando logo na página HOME */}
+
       <div class="imgHome">
         <img src={logoCompleto} alt="logoCompletoLotsAerodesign" width="700" />
       </div>
+
+      {/* Título e texto de apresentação */}
 
       <h1><b>Quem Somos?</b></h1>
 
@@ -36,6 +49,8 @@ function App() {
         equipe, visto que os estudantes envolvidos sempre buscam se inovar para conseguirem cumprir os desafios
         propostos, os quais se baseiam em obstáculos reais da indústria aeronáutica.
       </p>
+
+      {/* Imagem de alguns dos membros */}
 
       <div>
         <img src={membros} width="700" alt="membros" />
