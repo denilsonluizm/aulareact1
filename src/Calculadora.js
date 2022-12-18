@@ -1,15 +1,12 @@
 import fatorArrastoInduzido from './images/fatorArrastoInduzido.png'
 // import './App.css';
+import { calcReynolds, calculo1, calculo2 } from './codigo';
 
 function Calculadora() {
   return (
-
-    
     <div className="App">
       <header className="App-header">
-        {
-        
-        
+        {        
         <body>
 
             <br></br>
@@ -63,7 +60,7 @@ function Calculadora() {
                 </p>
             </div> <br></br>
 
-            <div class="text-center"><button class="button button1" type="button" onclick="calcReynolds()"><b>CALCULAR
+            <div class="text-center"><button class="button button1" type="button" onClick={calcReynolds}><b>CALCULAR
                         REYNOLDS</b></button></div>
             <b><p class="outputs" id="calcReynolds">
             </p> </b><br></br>
@@ -90,7 +87,7 @@ function Calculadora() {
                 </p>
             </div> <br></br>
 
-            <div class="text-center"><button class="button button2" type="button" onclick="calculo1()"><b>CALCULAR ALONGAMENTO E
+            <div class="text-center"><button class="button button2" type="button" onClick={calculo1}><b>CALCULAR ALONGAMENTO E
                         AFILAMENTO</b></button></div> <br></br>
             <b><p class="outputs" id="Alongamento"></p>
             <p class="outputs" id="Afilamento"></p></b> <br></br>
@@ -106,7 +103,7 @@ function Calculadora() {
             </div> <br></br><br></br>
 
             <div class="text-center">
-                <button class="button button3" type="button" onclick="calculo2()"><b>CALCULAR RESULTADOS</b></button>
+                <button class="button button3" type="button" onClick={calculo2}><b>CALCULAR RESULTADOS</b></button>
             </div> <br></br>
 
 

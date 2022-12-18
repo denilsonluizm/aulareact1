@@ -9,6 +9,7 @@ import Menu from './Menu';
 import Sobre from './Sobre';
 import Usuarios from './Usuarios';
 import Calculadora from './Calculadora';
+import Membros from './Membros';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,9 +17,9 @@ root.render(
     <Menu/>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="usuarios" element={<Component1 />} />
+        <Route path="usuarios" element={<Component1/>} />
         <Route path="sobre" element={<Sobre />} />
-        <Route path="membros" element={<Usuarios/>}/>
+        <Route path="membros" element={<Membros/>}/>
         <Route path="calculadora" element={<Calculadora/>}/>
       </Routes>
   </BrowserRouter>

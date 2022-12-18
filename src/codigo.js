@@ -1,4 +1,5 @@
 function areaAsa(tipo, envergadura, semiEnvergadura, cordaRaiz, cordaPonta) {
+    let area;
 
     if (tipo === 1) {
         area = envergadura * cordaRaiz;
@@ -74,7 +75,7 @@ function coefAngularAsa(a0, alongamento, delta) {
         a = a0 / (1 + ((a0 * 57.2958) / (Math.PI * alongamento * (1 / (1 + delta)))))
     }
     else {
-        a = a_0 / Math.sqrt(1 + Math.pow((a0 * 57.2958) / (Math.PI * alongamento), 2) + ((a0 * 57.2958) / (Math.PI * alongamento)))
+        a = a0 / Math.sqrt(1 + Math.pow((a0 * 57.2958) / (Math.PI * alongamento), 2) + ((a0 * 57.2958) / (Math.PI * alongamento)))
     }
 
     return a;
@@ -108,7 +109,7 @@ function sustentaçãoPontoAtuante(nMax, peso) {
     return nMax * peso;
 }
 
-function calcReynolds() {
+export function calcReynolds() {
     let peso, areaMolhada, velocidade, densidade, viscoCin, tipo, envergadura, semiEnvergadura,
         cordaRaiz, cordaPonta, cordaMedia, afilamento, reynolds;
 
@@ -134,14 +135,14 @@ function calcReynolds() {
 
     // Mostrar no site
     reynolds = numeroReynolds(velocidade, cordaMedia, viscoCin);
-    document.getElementById("calcReynolds").innerText = "Reynolds: " + reynolds.toFixed(0);
+    document.getElementById("calcReynolds").innerHTML = "Reynolds: " + reynolds.toFixed(0);
 
 }
 
-function calculo1() {
+export function calculo1() {
 
     let tipo, envergadura, semiEnvergadura, cordaRaiz, cordaPonta,
-        area, alongamento, afilamento, cordaMedia, yMed, reynolds;
+        area, alongamento, afilamento, cordaMedia, yMed, reynolds, velocidade, viscoCin;
 
     // Características do Fluido
     velocidade = parseFloat(document.getElementById("velocidade").value);
@@ -167,10 +168,10 @@ function calculo1() {
     document.getElementById("Afilamento").innerText = "Afilamento = " + afilamento;
 }
 
-function calculo2() {
+export function calculo2() {
     let tipo, envergadura, semiEnvergadura, cordaRaiz, cordaPonta, delta, peso, densidadeAr, clProjeto, cdProjeto,
         clMax, clZero, clAlphaZero, alpha1, cl1, alpha2, cl2, constProp, CLMax, coefAtrito, areaMolhada, efProjeto,
-        area, alongamento, afilamento, cordaMedia, yMed, reynolds, a0, aAsa, velStol, coefParasita;
+        area, alongamento, afilamento, cordaMedia, yMed, reynolds, a0, aAsa, velStol, coefParasita, velocidade, viscoCin;
 
     const tr = document.createElement("tr");
     const td = document.createElement("td");
