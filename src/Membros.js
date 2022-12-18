@@ -276,9 +276,9 @@ export default function Membros() {
               setStatus(e.target.value);
             }}>
             <option value=""></option>
-            <option value="DESLIGADO">DESLIGADO</option>
-            <option value="SURTANDO">SURTANDO</option>
             <option value="ATIVO">ATIVO</option>
+            <option value="DESLIGADO">DESLIGADO</option>
+            
           </select>
           <br></br>
           <br></br>
