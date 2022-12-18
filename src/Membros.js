@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import imgEdit from "./images/imgEdit.ico";
 import imgDelete from "./images/imgDelete.ico";
+import decolar from "./images/decolar.ico";
+import pousar from "./images/pousar.ico"
 import "./Membros.css";
 
 export default function Membros() {
@@ -17,7 +19,11 @@ export default function Membros() {
   const [cargo, setCargo] = useState("");
   const [tipo, setTipo] = useState("");
 
-  const url = "https://backend-n3w118fyk-denilsonluizm.vercel.app/";
+  // const url = "https://backend-n3w118fyk-denilsonluizm.vercel.app/";
+
+  const url = "https://backend-gnx9kw2l3-denilsonluizm.vercel.app/";
+
+  // const url = "http://localhost:8081/";
 
   useEffect(() => {
     fetch(url + "membros")
@@ -69,8 +75,8 @@ export default function Membros() {
     let { id, nome, matricula, curso, setor, email, telefone, status, cargo } = response.data;
     let obj = { id: id, nome: nome, matricula: matricula, curso: curso, setor: setor, email: email, telefone: telefone, status: status, cargo: cargo };
     let members = membros;
-    membros.push(obj);
-    setMembros(membros);
+    members.push(obj);
+    setMembros(members);
     limparDados("");
   }
 
@@ -128,12 +134,18 @@ export default function Membros() {
   }
 
   return (
-    <div>
+    <div className="App">
+      <br></br>
+      <br></br>
       <button type="button" onClick={novosDados}>
-        Novo
+        Novo Cadastro
       </button>
+      <br></br>
+      <br></br>
       {tipo ? (
         <>
+          Nome: 
+          <br></br>
           <input
             type="text"
             name="txtNome"
@@ -142,6 +154,10 @@ export default function Membros() {
               setNome(e.target.value);
             }}
           />
+          <br></br>
+          <br></br>
+          Matricula:
+          <br></br>
           <input
             type="text"
             name="txtMatricula"
@@ -150,6 +166,10 @@ export default function Membros() {
               setMatricula(e.target.value);
             }}
           />
+          <br></br>
+          <br></br>
+          Curso:
+          <br></br>
           <input
             type="text"
             name="txtCurso"
@@ -158,6 +178,10 @@ export default function Membros() {
               setCurso(e.target.value);
             }}
           />
+          <br></br>
+          <br></br>
+          Setor:
+          <br></br>
           <input
             type="text"
             name="txtSetor"
@@ -166,6 +190,10 @@ export default function Membros() {
               setSetor(e.target.value);
             }}
           />
+          <br></br>
+          <br></br>
+          Email:
+          <br></br>
           <input
             type="text"
             name="txtEmail"
@@ -174,6 +202,10 @@ export default function Membros() {
               setEmail(e.target.value);
             }}
           />
+          <br></br>
+          <br></br>
+          Telefone:
+          <br></br>
           <input
             type="text"
             name="txtTelefone"
@@ -182,14 +214,30 @@ export default function Membros() {
               setTelefone(e.target.value);
             }}
           />
-          <input
+          {/* <input
             type="text"
             name="txtStatus"
             value={status}
             onChange={(e) => {
               setStatus(e.target.value);
             }}
-          />
+          /> */}
+          <br></br>
+          <br></br>
+          Status:
+          <br></br>
+          <select 
+            value={status}
+            onChange={(e) => {
+              setStatus(e.target.value);
+            }}>
+            <option value="ATIVO">ATIVO</option>
+            <option value="DESLIGADO">DESLIGADO</option>
+          </select>
+          <br></br>
+          <br></br>
+          Cargo:
+          <br></br>
           <input
             type="text"
             name="txtCargo"
@@ -198,6 +246,8 @@ export default function Membros() {
               setCargo(e.target.value);
             }}
           />
+          <br></br>
+          <br></br>
           <button type="button" onClick={limparDados}>
             Cancelar
           </button>
@@ -216,15 +266,16 @@ export default function Membros() {
                   {item.id} - {item.nome} - {item.matricula} - {item.curso} - {item.setor} - {item.email} - {item.telefone} - {item.status} - {item.cargo}{" "}
                   <img
                     alt="Editar"
-                    src={imgEdit}
+                    src={decolar}
                     id={item.id}
                     height={20}
                     width={20}
                     onClick={(e) => editarDados(item.id)}
                   />
+                  {"  "}
                   <img
                     alt="Apagar"
-                    src={imgDelete}
+                    src={pousar}
                     id={item.id}
                     height={20}
                     width={20}
@@ -234,7 +285,8 @@ export default function Membros() {
               </div>
             );
           })
-        : false}
+        : false
+      }
     </div>
   );
 }
