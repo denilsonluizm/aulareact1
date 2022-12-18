@@ -40,7 +40,7 @@ header {
 
 #menu-h ul li:last-child a {
     float: right;
-    background-color: rgb(147, 147, 147);
+    background-color: rgb(0,51,126);
 }
 
 #menu-h ul li:last-child a:hover {

@@ -12,7 +12,7 @@ export default function Membros() {
   const [nome, setNome] = useState("");
   const [matricula, setMatricula] = useState("");
   const [curso, setCurso] = useState("");
-  const [setor, setSetor] = useState(""); 
+  const [setor, setSetor] = useState("");
   const [email, setEmail] = useState("");
   const [telefone, setTelefone] = useState("");
   const [status, setStatus] = useState("");
@@ -26,7 +26,7 @@ export default function Membros() {
   // const url = "http://localhost:8081/";
 
   useEffect(() => {
-    fetch(url + "membros")
+    fetch(url + "membros", { headers: { 'Access-Control-Allow-Origin': '*' } })
       .then((response) => response.json())
       .then((data) => setMembros(data))
       .catch((err) => console.log(err));
@@ -57,7 +57,7 @@ export default function Membros() {
     setNome(nome);
     setMatricula(matricula);
     setCurso(curso);
-    setSetor(setor);   
+    setSetor(setor);
     setEmail(email);
     setTelefone(telefone);
     setStatus(status);
@@ -102,12 +102,12 @@ export default function Membros() {
         axios
           .post(url + "membros", {
             nome: nome,
-            matricula: matricula, 
-            curso: curso, 
-            setor: setor, 
-            email: email, 
-            telefone: telefone, 
-            status: status, 
+            matricula: matricula,
+            curso: curso,
+            setor: setor,
+            email: email,
+            telefone: telefone,
+            status: status,
             cargo: cargo,
           })
           .then((response) => atualizaListaComNovoMembro(response))
@@ -117,12 +117,12 @@ export default function Membros() {
           .put(url + "membros/" + id, {
             id: id,
             nome: nome,
-            matricula: matricula, 
-            curso: curso, 
-            setor: setor, 
-            email: email, 
-            telefone: telefone, 
-            status: status, 
+            matricula: matricula,
+            curso: curso,
+            setor: setor,
+            email: email,
+            telefone: telefone,
+            status: status,
             cargo: cargo,
           })
           .then((response) => atualizaListaMembroEditado(response))
@@ -144,7 +144,7 @@ export default function Membros() {
       <br></br>
       {tipo ? (
         <>
-          Nome: 
+          Nome:
           <br></br>
           <input
             type="text"
@@ -170,26 +170,44 @@ export default function Membros() {
           <br></br>
           Curso:
           <br></br>
-          <input
-            type="text"
-            name="txtCurso"
+          <select
             value={curso}
             onChange={(e) => {
               setCurso(e.target.value);
-            }}
-          />
+            }}>
+            <option value=""></option>
+            <option value="Engenharia Ambiental">Engenharia Ambiental</option>
+            <option value="Engenharia da Computação">Engenharia da Computação</option>
+            <option value="Engenharia de Controle e Automação">Engenharia de Controle e Automação</option>
+            <option value="Engenharia Elétrica">Engenharia Elétrica</option>
+            <option value="Engenharia de Materiais">Engenharia de Materiais</option>
+            <option value="Engenharia Mecânica">Engenharia Mecânica</option>
+            <option value="Engenharia da Mobilidade">Engenharia da Mobilidade</option>
+            <option value="Engenharia de Produção">Engenharia de Produção</option>
+            <option value="Engenharia de Saúde e Segurança">Engenharia de Saúde e Segurança</option>
+          </select>
           <br></br>
           <br></br>
           Setor:
           <br></br>
-          <input
-            type="text"
-            name="txtSetor"
+          <select
             value={setor}
             onChange={(e) => {
               setSetor(e.target.value);
-            }}
-          />
+            }}>
+            <option value=""></option>
+            <option value="Aerodinâmica">Aerodinâmica</option>
+            <option value="Capitania">Capitania</option>
+            <option value="Cargas e Aeroelasticidade">Cargas e Aeroelasticidade</option>
+            <option value="Desempenho">Desempenho</option>
+            <option value="Estabilidade e Controle">Estabilidade e Controle</option>
+            <option value="Estruturas">Estruturas</option>
+            <option value="Financeiro">Financeiro</option>
+            <option value="Gestão de Pessoas">Gestão de Pessoas</option>
+            <option value="Gestão de Projetos">Gestão de Projetos</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Sistemas Elétricos">Sistemas Elétricos</option>
+          </select>
           <br></br>
           <br></br>
           Email:
@@ -226,26 +244,31 @@ export default function Membros() {
           <br></br>
           Status:
           <br></br>
-          <select 
+          <select
             value={status}
             onChange={(e) => {
               setStatus(e.target.value);
             }}>
-            <option value="ATIVO">ATIVO</option>
+            <option value=""></option>
             <option value="DESLIGADO">DESLIGADO</option>
+            <option value="SURTANDO">SURTANDO</option>
+            <option value="ATIVO">ATIVO</option>
           </select>
           <br></br>
           <br></br>
           Cargo:
           <br></br>
-          <input
-            type="text"
-            name="txtCargo"
+          <select
             value={cargo}
             onChange={(e) => {
               setCargo(e.target.value);
-            }}
-          />
+            }}>
+            <option value=""></option>
+            <option value="Acessor">Acessor</option>
+            <option value="Capitão">Capitão</option>
+            <option value="Diretor">Diretor</option>
+            <option value="Trainee">Trainee</option>
+          </select>
           <br></br>
           <br></br>
           <button type="button" onClick={limparDados}>
@@ -260,31 +283,31 @@ export default function Membros() {
       )}
       {membros
         ? membros.map((item) => {
-            return (
-              <div key={item.id}>
-                <div className="linha">
-                  {item.id} - {item.nome} - {item.matricula} - {item.curso} - {item.setor} - {item.email} - {item.telefone} - {item.status} - {item.cargo}{" "}
-                  <img
-                    alt="Editar"
-                    src={decolar}
-                    id={item.id}
-                    height={20}
-                    width={20}
-                    onClick={(e) => editarDados(item.id)}
-                  />
-                  {"  "}
-                  <img
-                    alt="Apagar"
-                    src={pousar}
-                    id={item.id}
-                    height={20}
-                    width={20}
-                    onClick={(e) => apagarDados(item.id)}
-                  />
-                </div>
+          return (
+            <div key={item.id}>
+              <div className="linha">
+                {item.id} - {item.nome} - {item.matricula} - {item.curso} - {item.setor} - {item.email} - {item.telefone} - {item.status} - {item.cargo}{" "}
+                <img
+                  alt="Editar"
+                  src={decolar}
+                  id={item.id}
+                  height={20}
+                  width={20}
+                  onClick={(e) => editarDados(item.id)}
+                />
+                {"  "}
+                <img
+                  alt="Apagar"
+                  src={pousar}
+                  id={item.id}
+                  height={20}
+                  width={20}
+                  onClick={(e) => apagarDados(item.id)}
+                />
               </div>
-            );
-          })
+            </div>
+          );
+        })
         : false
       }
     </div>

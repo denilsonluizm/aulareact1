@@ -7,7 +7,7 @@ export default function Menu() {
         <header>
             <nav id="menu-h">
                 <ul>
-                    <li><Link className="itemMenu" to="/">HOME</Link> </li>
+                    <li><Link className="itemMenu" to="/">Home</Link> </li>
                     <li>
                         <a target="_blank" rel='noreferrer' href="https://www.instagram.com/lotsaerodesign/">Instagram</a>
                     </li>

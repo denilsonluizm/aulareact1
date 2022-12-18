@@ -17,7 +17,7 @@ root.render(
     <Menu/>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="usuarios" element={<Component1/>} />
+        {/* <Route path="usuarios" element={<Component1/>} /> */}
         <Route path="sobre" element={<Sobre />} />
         <Route path="membros" element={<Membros/>}/>
         <Route path="calculadora" element={<Calculadora/>}/>

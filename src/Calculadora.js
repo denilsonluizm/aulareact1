@@ -3,14 +3,8 @@ import fatorArrastoInduzido from './images/fatorArrastoInduzido.png'
 import { calcReynolds, calculo1, calculo2 } from './codigo';
 
 function Calculadora() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        {        
-        <body>
-
-            <br></br>
-
+    return (
+        <div className="App">
             <h1><b>Calculadora Aerodinâmica</b></h1>
 
             <br></br>
@@ -21,7 +15,7 @@ function Calculadora() {
             <div class="inputs">
                 <p>
                     Peso (N)<br></br>
-                    <input id="peso" type="number" size="10"/> <br></br>
+                    <input id="peso" type="number" size="10" /> <br></br>
                     Área Molhada (m<sup>2</sup>)<br></br>
                     <input id="areaMolhada" type="number" size="10" /> <br></br>
                 </p>
@@ -43,7 +37,7 @@ function Calculadora() {
             <div class="inputs">
                 <p>
                     Tipo <br></br>
-                        <select name="tipoAsas" id="tipoAsa">
+                    <select name="tipoAsas" id="tipoAsa">
                         <option value="1">Retangular</option>
                         <option value="2">Trapezoidal</option>
                         <option value="3">Mista</option>
@@ -61,7 +55,7 @@ function Calculadora() {
             </div> <br></br>
 
             <div class="text-center"><button class="button button1" type="button" onClick={calcReynolds}><b>CALCULAR
-                        REYNOLDS</b></button></div>
+                REYNOLDS</b></button></div>
             <b><p class="outputs" id="calcReynolds">
             </p> </b><br></br>
 
@@ -88,14 +82,14 @@ function Calculadora() {
             </div> <br></br>
 
             <div class="text-center"><button class="button button2" type="button" onClick={calculo1}><b>CALCULAR ALONGAMENTO E
-                        AFILAMENTO</b></button></div> <br></br>
+                AFILAMENTO</b></button></div> <br></br>
             <b><p class="outputs" id="Alongamento"></p>
-            <p class="outputs" id="Afilamento"></p></b> <br></br>
+                <p class="outputs" id="Afilamento"></p></b> <br></br>
 
             <h2>3ª Etapa - Cálculo dos Resultados Finais</h2> <br></br>
-            
+
             <div class="imgHome">
-                <img src={fatorArrastoInduzido} width="700" alt='fator'/> 
+                <img src={fatorArrastoInduzido} width="700" alt='fator' />
             </div>
 
             <div class="inputs"> Fator de arrasto induzido &delta; <br></br>
@@ -148,13 +142,8 @@ function Calculadora() {
                     </tbody>
                 </table>
             </div>
-
-        </body>
-
-        }
-      </header>
-    </div>
-  );
+        </div>
+    );
 }
 
 export default Calculadora;
