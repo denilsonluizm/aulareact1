@@ -4,10 +4,11 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import './index.css';
 import App from './App';
 import Component1 from './Component1';
-import UsuariosTabela from './UsuariosTabela';
+// import UsuariosTabela from './UsuariosTabela';
 import Menu from './Menu';
 import Sobre from './Sobre';
 import Usuarios from './Usuarios';
+import Calculadora from './Calculadora';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,7 +18,8 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="usuarios" element={<Component1 />} />
         <Route path="sobre" element={<Sobre />} />
-        <Route path="pessoas" element={<Usuarios/>}/>
+        <Route path="membros" element={<Usuarios/>}/>
+        <Route path="calculadora" element={<Calculadora/>}/>
       </Routes>
   </BrowserRouter>
 );
